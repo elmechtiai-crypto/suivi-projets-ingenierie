@@ -1,0 +1,581 @@
+:root {
+  --color-primary: #123153;
+  --color-primary-dark: #0a223b;
+  --color-secondary: #eaf2f8;
+  --color-accent: #c7a24b;
+  --color-accent-dark: #8a681c;
+  --color-text: #182431;
+  --color-muted: #526171;
+  --color-surface: #ffffff;
+  --color-border: #cbd8e3;
+  --color-focus: #f2bf3f;
+  --shadow-soft: 0 0.75rem 2rem rgb(18 49 83 / 12%);
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.5rem;
+  --content-width: 72rem;
+  --reading-width: 48rem;
+  --section-space: clamp(3rem, 7vw, 6rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.25rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: var(--color-surface);
+  background: var(--color-primary-dark);
+  border-radius: var(--radius-small);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  color: var(--color-surface);
+  transform: translateY(0);
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem max(1rem, calc((100% - var(--content-width)) / 2));
+  color: var(--color-surface);
+  background: var(--color-primary-dark);
+  border-bottom: 0.25rem solid var(--color-accent);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand img {
+  width: 3.5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--color-surface);
+  border: 0.15rem solid rgb(255 255 255 / 45%);
+  border-radius: 50%;
+}
+
+.brand p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  color: var(--color-surface);
+  border-radius: var(--radius-small);
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+}
+
+main {
+  overflow: hidden;
+}
+
+main > section {
+  padding: var(--section-space) max(1rem, calc((100% - var(--content-width)) / 2));
+}
+
+main > section:nth-child(odd) {
+  background: var(--color-secondary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-block: 0 0.65em;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h1 {
+  max-width: 16ch;
+  font-size: clamp(2.25rem, 9vw, 4.75rem);
+}
+
+h2 {
+  max-width: 28ch;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 4vw, 1.55rem);
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+p,
+ul,
+ol,
+figure {
+  margin-block: 0 1.25rem;
+}
+
+section > p {
+  max-width: var(--reading-width);
+}
+
+main > section.hero {
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  min-height: min(48rem, 88vh);
+  color: var(--color-surface);
+  background:
+    linear-gradient(135deg, rgb(10 34 59 / 98%), rgb(18 49 83 / 88%)),
+    var(--color-primary);
+}
+
+.hero h1,
+.hero a,
+.hero .lead {
+  color: var(--color-surface);
+}
+
+.hero p {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 650;
+}
+
+.primary-action,
+#checklist-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.1rem;
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+  border: 0.13rem solid var(--color-accent);
+  border-radius: var(--radius-small);
+  box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 18%);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-action:hover,
+#checklist-toggle:hover {
+  color: var(--color-surface);
+  background: var(--color-primary);
+  border-color: var(--color-surface);
+}
+
+.notice {
+  margin-top: 1rem;
+  color: #dce9f4;
+  font-size: 0.9rem;
+}
+
+.hero > img {
+  width: 100%;
+  border: 0.25rem solid rgb(255 255 255 / 18%);
+  border-radius: var(--radius-large);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 28%);
+}
+
+.benefit-list {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+#benefices-statut.error {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.benefit-list article,
+.method-list li,
+.weekly-rhythm > div,
+.checklist-group {
+  padding: clamp(1.1rem, 4vw, 1.75rem);
+  background: var(--color-surface);
+  border: 0.08rem solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+}
+
+.benefit-list article {
+  border-top: 0.3rem solid var(--color-accent);
+}
+
+.benefit-list p,
+.method-list p,
+.weekly-rhythm p,
+.checklist-group ul {
+  margin-bottom: 0;
+}
+
+.colonnes-liste {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+#colonnes-statut.error {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.colonnes-liste article {
+  padding: clamp(1.1rem, 4vw, 1.75rem);
+  background: var(--color-surface);
+  border: 0.08rem solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+  border-top: 0.3rem solid var(--color-accent);
+}
+
+.colonne-categorie {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.colonnes-liste p:last-child {
+  margin-bottom: 0;
+}
+
+figure {
+  max-width: var(--content-width);
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+figure img {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 0.08rem solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+}
+
+figcaption {
+  max-width: var(--reading-width);
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.method-list {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: method-step;
+}
+
+.method-list li {
+  position: relative;
+  padding-top: 4.25rem;
+  counter-increment: method-step;
+}
+
+.method-list li::before {
+  position: absolute;
+  top: 1rem;
+  left: 1.1rem;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+  border-radius: 50%;
+  content: counter(method-step);
+  font-weight: 850;
+}
+
+.weekly-rhythm {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.weekly-rhythm > h3,
+.weekly-rhythm > figure,
+.weekly-rhythm > aside {
+  grid-column: 1 / -1;
+}
+
+.weekly-rhythm aside {
+  padding: 1.1rem 1.25rem;
+  color: var(--color-primary-dark);
+  background: #fff7dd;
+  border: 0.1rem solid var(--color-accent);
+  border-left-width: 0.4rem;
+  border-radius: var(--radius-small);
+}
+
+.weekly-rhythm aside p {
+  margin: 0;
+}
+
+#checklist {
+  color: var(--color-surface);
+  background: var(--color-primary-dark);
+}
+
+#checklist h2,
+#checklist > p {
+  color: var(--color-surface);
+}
+
+#checklist-toggle {
+  margin-block: 0.5rem 1.5rem;
+}
+
+#checklist-contenu {
+  display: grid;
+  gap: 1rem;
+}
+
+.checklist-group {
+  color: var(--color-text);
+}
+
+.checklist-group li + li {
+  margin-top: 0.7rem;
+}
+
+.checklist-group li::marker {
+  color: var(--color-accent-dark);
+}
+
+.checklist-visuals {
+  display: grid;
+  gap: 1rem;
+}
+
+.checklist-visuals figure {
+  margin-block: 1rem 0;
+}
+
+#checklist figcaption {
+  color: #dce9f4;
+}
+
+#securite {
+  border-top: 0.35rem solid var(--color-accent);
+}
+
+footer {
+  padding: 2.5rem max(1rem, calc((100% - var(--content-width)) / 2));
+  color: var(--color-surface);
+  background: var(--color-primary-dark);
+  text-align: center;
+}
+
+footer p {
+  margin: 0.3rem auto;
+}
+
+@media (min-width: 36rem) {
+  .site-header {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .site-header nav {
+    justify-self: end;
+  }
+
+  .benefit-list,
+  .colonnes-liste,
+  .weekly-rhythm,
+  #checklist-contenu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .benefit-list article:last-child,
+  .checklist-visuals {
+    grid-column: 1 / -1;
+  }
+
+  .checklist-visuals {
+    grid-template-columns: minmax(14rem, 0.7fr) minmax(18rem, 1.3fr);
+  }
+}
+
+@media (min-width: 52rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  }
+
+  .benefit-list,
+  .colonnes-liste {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .benefit-list article:last-child {
+    grid-column: auto;
+  }
+
+  .method-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .method-list li {
+    grid-column: span 2;
+  }
+
+  .method-list li:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .weekly-rhythm {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  #checklist-contenu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  .site-header nav,
+  .skip-link,
+  #checklist-toggle {
+    display: none !important;
+  }
+
+  body,
+  .hero,
+  #checklist,
+  footer {
+    color: #000000;
+    background: #ffffff;
+  }
+
+  main > section {
+    break-inside: avoid;
+  }
+}
