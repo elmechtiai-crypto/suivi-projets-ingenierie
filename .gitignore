@@ -1,0 +1,31 @@
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Dépendances, caches et sorties locales
+node_modules/
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+*.log
+
+# Fichiers système et éditeurs
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Archives et données privées
+*.zip
+*.7z
+*.rar
+donnees-privees-ne-pas-partager/

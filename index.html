@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Guide Web interne pour organiser le suivi des projets d’ingénierie, repérer les blocages et préparer les actions prioritaires.">
+    <meta name="description" content="INGÉNIA PILOT organise le suivi des projets d’ingénierie, aide à repérer les blocages et prépare les actions prioritaires.">
     <meta name="theme-color" content="#123153">
-    <title>Suivi des projets d’ingénierie — Guide Web interne</title>
+    <title>INGÉNIA PILOT — Pilotage des projets d’ingénierie</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" href="./assets/images/icons/icon-192.png">
@@ -17,16 +17,28 @@
       <div class="brand">
         <img
           src="./assets/images/logo-fictif-suivi-projets-v1.png"
-          alt="Emblème fictif du guide de suivi des projets d’ingénierie"
+          alt="Emblème fictif d’INGÉNIA PILOT"
           width="160"
           height="160"
         >
-        <p>Suivi projets ingénierie</p>
+        <p>INGÉNIA PILOT</p>
       </div>
 
       <nav aria-label="Navigation principale">
         <ul>
+          <li>
+            <a class="alert-nav-link" href="#alertes">
+              <svg class="alert-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3 2.8 20h18.4L12 3Z"></path>
+                <path d="M12 9v5m0 3h.01"></path>
+              </svg>
+              <span>Alertes</span>
+            </a>
+          </li>
+          <li><a href="#priorites">Priorités</a></li>
+          <li><a href="#affiches">Affiches</a></li>
           <li><a href="#besoin">Pourquoi ce suivi ?</a></li>
+          <li><a href="#missions">Missions suivies</a></li>
           <li><a href="#informations-suivies">Informations suivies</a></li>
           <li><a href="#benefices">Bénéfices</a></li>
           <li><a href="#methode">Méthode</a></li>
@@ -38,15 +50,18 @@
     <main id="contenu-principal">
       <section class="hero" aria-labelledby="titre-principal">
         <div class="hero-content">
-          <p class="eyebrow">Guide Web interne</p>
-          <h1 id="titre-principal">Suivi des projets d’ingénierie</h1>
+          <p class="eyebrow">Pilotage des projets d’ingénierie</p>
+          <h1 id="titre-principal">INGÉNIA PILOT</h1>
           <p class="lead">Une vue claire et partagée des missions en cours</p>
           <p>
             Ce guide interne présente une méthode simple pour identifier chaque marché ou dossier,
             mettre à jour l’avancement des missions, repérer les blocages et préparer les actions
             prioritaires avec l’équipe.
           </p>
-          <a class="primary-action" href="#checklist">Accéder à la checklist</a>
+          <div class="hero-actions">
+            <a class="primary-action" href="#alertes">Voir les alertes</a>
+            <a class="hero-secondary-action" href="#missions">Consulter le portefeuille</a>
+          </div>
           <p class="notice">Démonstration locale — aucune donnée réelle — aucune publication.</p>
         </div>
 
@@ -70,6 +85,115 @@
           Le suivi ne remplace pas les dossiers techniques, les contrats, les factures ou les
           échanges professionnels. Il fournit une vue synthétique pour orienter le travail.
         </p>
+      </section>
+
+      <section id="missions" aria-labelledby="titre-missions">
+        <h2 id="titre-missions">Portefeuille de missions anonymisé (V3)</h2>
+        <p>
+          Cette démonstration couvre l’ensemble des projets recensés dans la synthèse interne,
+          sous des identifiants fictifs. Aucun nom réel de client, numéro de marché, objet précis
+          ou montant réel n’apparaît sur cette page.
+        </p>
+
+        <div class="missions-summary" aria-label="Synthèse du portefeuille anonymisé">
+          <article><strong id="missions-total">0</strong><span>Missions recensées</span></article>
+          <article><strong id="missions-en-suivi">0</strong><span>En suivi</span></article>
+          <article><strong id="missions-a-demarrer">0</strong><span>À démarrer</span></article>
+          <article><strong id="missions-a-confirmer">0</strong><span>À confirmer ou clôturer</span></article>
+        </div>
+
+        <div class="missions-toolbar" aria-label="Filtres des missions">
+          <label>
+            Rechercher un alias
+            <input id="missions-recherche" type="search" placeholder="Ex. Client8 ou Marché12" autocomplete="off">
+          </label>
+          <label>
+            Statut de suivi
+            <select id="missions-filtre-statut">
+              <option value="">Tous les statuts</option>
+              <option value="En suivi">En suivi</option>
+              <option value="À démarrer">À démarrer</option>
+              <option value="À confirmer">À confirmer</option>
+              <option value="Clôture à confirmer">Clôture à confirmer</option>
+            </select>
+          </label>
+          <label>
+            Année d’activité
+            <select id="missions-filtre-annee">
+              <option value="">Toutes les années</option>
+            </select>
+          </label>
+          <button id="missions-reinitialiser" type="button">Réinitialiser les filtres</button>
+        </div>
+
+        <p id="missions-statut" role="status" aria-live="polite"></p>
+
+        <div class="table-wrapper">
+          <table id="missions-table" aria-busy="true">
+            <caption>Projets anonymisés issus de la synthèse interne</caption>
+            <thead>
+              <tr>
+                <th scope="col">Référence</th>
+                <th scope="col">Client</th>
+                <th scope="col">Type de mission</th>
+                <th scope="col">Échéance</th>
+                <th scope="col">Dernier document</th>
+                <th scope="col">Avancement</th>
+                <th scope="col">Livrable bloquant</th>
+                <th scope="col">État de paiement</th>
+                <th scope="col">Action prioritaire</th>
+                <th scope="col">Responsable</th>
+                <th scope="col">Dernière mise à jour</th>
+              </tr>
+            </thead>
+            <tbody id="missions-corps"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="alertes" class="alerts-section" aria-labelledby="titre-alertes">
+        <div class="alerts-header">
+          <div>
+            <p class="eyebrow">Surveillance du portefeuille</p>
+            <div class="alerts-title-row">
+              <svg class="alerts-heading-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3 2.8 20h18.4L12 3Z"></path>
+                <path d="M12 9v5m0 3h.01"></path>
+              </svg>
+              <h2 id="titre-alertes">Alertes et blocages</h2>
+            </div>
+            <p>
+              Cette vue signale les missions anonymisées dont le statut public est
+              « À confirmer ». Elle présente uniquement la raison générique du blocage,
+              l’action à réaliser et le responsable générique.
+            </p>
+          </div>
+
+          <div class="alerts-count" aria-label="Nombre de missions nécessitant une clarification">
+            <strong id="alertes-total">0</strong>
+            <span>Missions à clarifier</span>
+          </div>
+        </div>
+
+        <p id="alertes-statut" role="status" aria-live="polite">Chargement des alertes…</p>
+        <div id="alertes-liste" class="alerts-list" aria-busy="true"></div>
+
+        <a class="alert-action" href="./index.html?statut=%C3%80%20confirmer#missions">
+          Voir ces missions dans le tableau complet
+        </a>
+      </section>
+
+      <section id="priorites" class="priorities-section" aria-labelledby="titre-priorites">
+        <p class="eyebrow">Décision rapide</p>
+        <h2 id="titre-priorites">Plan d’action du portefeuille</h2>
+        <p>
+          Cette synthèse regroupe les missions anonymisées par statut et indique
+          les actions prioritaires à engager. Les compteurs sont recalculés
+          automatiquement à partir des données publiques.
+        </p>
+
+        <p id="priorites-statut" role="status" aria-live="polite">Chargement des priorités…</p>
+        <div id="priorites-liste" class="priorities-list" aria-busy="true"></div>
       </section>
 
       <section id="informations-suivies" aria-labelledby="titre-informations-suivies">
@@ -97,6 +221,76 @@
           >
           <figcaption>Une organisation commune facilite la lecture et la préparation des décisions.</figcaption>
         </figure>
+      </section>
+
+      <section id="affiches" class="poster-section" aria-labelledby="titre-affiches">
+        <p class="eyebrow">Supports de communication</p>
+        <h2 id="titre-affiches">Les affiches d’INGÉNIA PILOT</h2>
+        <p>
+          Trois visuels présentent la promesse, les preuves et le principe de
+          contrôle humain. Ils sont génériques et ne représentent aucun projet réel.
+        </p>
+
+        <div class="poster-grid">
+          <figure class="poster-card">
+            <picture>
+              <source srcset="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.webp" type="image/webp">
+              <img
+                src="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.jpg"
+                alt="Affiche bleu nuit et or d’INGÉNIA PILOT avec le slogan Du dossier dispersé à la décision maîtrisée"
+                width="1080"
+                height="1350"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>La promesse</strong>
+              <span>Du dossier dispersé à la décision maîtrisée.</span>
+              <a href="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.jpg">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+
+          <figure class="poster-card">
+            <picture>
+              <source srcset="./assets/images/affiches/affiche-02-chiffres-cles.webp" type="image/webp">
+              <img
+                src="./assets/images/affiches/affiche-02-chiffres-cles.jpg"
+                alt="Affiche claire d’INGÉNIA PILOT annonçant 41 missions anonymisées et zéro donnée réelle publiée"
+                width="1080"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>Les preuves</strong>
+              <span>41 missions anonymisées, zéro donnée réelle publiée.</span>
+              <a href="./assets/images/affiches/affiche-02-chiffres-cles.jpg">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+
+          <figure class="poster-card">
+            <picture>
+              <source srcset="./assets/images/affiches/affiche-03-manifeste-controle-humain.webp" type="image/webp">
+              <img
+                src="./assets/images/affiches/affiche-03-manifeste-controle-humain.jpg"
+                alt="Affiche bleu nuit illustrant les étapes L’IA propose, l’humain contrôle et le livrable prouve"
+                width="1080"
+                height="1350"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>Le manifeste</strong>
+              <span>L’IA propose. L’humain contrôle. Le livrable prouve.</span>
+              <a href="./assets/images/affiches/affiche-03-manifeste-controle-humain.jpg">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="poster-disclaimer"><strong>Transparence :</strong> illustrations génériques générées par IA — elles ne représentent pas les projets réels.</p>
       </section>
 
       <section id="methode" aria-labelledby="titre-methode">
@@ -245,8 +439,8 @@
     </main>
 
     <footer>
-      <p><strong>Guide Web interne — Suivi des projets d’ingénierie</strong></p>
-      <p>Mini-site V1 · Démonstration locale · Aucune publication</p>
+      <p><strong>INGÉNIA PILOT — Pilotage des projets d’ingénierie</strong></p>
+      <p>Portefeuille V3 · Démonstration locale · Aucune publication</p>
     </footer>
 
     <script src="./js/app.js" defer></script>

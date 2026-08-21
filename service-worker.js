@@ -1,4 +1,5 @@
-const CACHE_NAME = "suivi-projets-ingenierie-v2";
+const CACHE_NAME = "ingenia-pilot-v8";
+const CACHE_PREFIXES = ["ingenia-pilot-", "suivi-projets-ingenierie-"];
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -15,7 +16,13 @@ const APP_SHELL = [
   "./assets/images/illustration-benefices-suivi-v1.png",
   "./assets/images/illustration-checklist-marche-v1.png",
   "./assets/images/illustration-suivi-projets-v1.png",
-  "./assets/images/organigramme-informations-marche-v1.svg"
+  "./assets/images/organigramme-informations-marche-v1.svg",
+  "./assets/images/affiches/affiche-01-lancement-ingenia-pilot.jpg",
+  "./assets/images/affiches/affiche-01-lancement-ingenia-pilot.webp",
+  "./assets/images/affiches/affiche-02-chiffres-cles.jpg",
+  "./assets/images/affiches/affiche-02-chiffres-cles.webp",
+  "./assets/images/affiches/affiche-03-manifeste-controle-humain.jpg",
+  "./assets/images/affiches/affiche-03-manifeste-controle-humain.webp"
 ];
 
 self.addEventListener("install", (event) => {
@@ -27,7 +34,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((names) => Promise.all(
       names
-        .filter((name) => name.startsWith("suivi-projets-ingenierie-") && name !== CACHE_NAME)
+        .filter((name) => CACHE_PREFIXES.some((prefix) => name.startsWith(prefix)) && name !== CACHE_NAME)
         .map((name) => caches.delete(name))
     ))
   );

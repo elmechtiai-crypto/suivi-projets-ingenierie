@@ -1,7 +1,7 @@
 {
-  "name": "Suivi des projets d’ingénierie — Guide Web interne",
-  "short_name": "Suivi projets",
-  "description": "Guide Web interne pour organiser le suivi des projets d’ingénierie, repérer les blocages et préparer les actions prioritaires.",
+  "name": "INGÉNIA PILOT — Pilotage des projets d’ingénierie",
+  "short_name": "INGÉNIA PILOT",
+  "description": "Application légère de pilotage des projets d’ingénierie, conçue pour repérer les blocages et préparer les actions prioritaires.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
