@@ -3,7 +3,7 @@
 **Version :** V8 locale — tableau des priorités, statuts visuels, alertes, affiches intégrées, identité INGÉNIA PILOT et PWA
 **Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7 et enrichissement V8 le 21 août 2026
 **Public :** équipe du bureau d’études techniques
-**Publication :** dépôt GitHub existant ; mise à jour V8 préparée pour GitHub Pages
+**Publication :** [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — V8 en ligne
 
 ## Objectif
 
@@ -78,7 +78,7 @@ Aucun compte, framework ni CDN n’est nécessaire. Une connexion Internet n’e
 - dossier de publication : `/(root)` ;
 - adresse attendue : `https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/`.
 
-Le contenu est préparé sur la branche `publication/preparer-github-pages` avant son intégration dans `master`.
+La V8 a été préparée sur la branche `publication/preparer-github-pages`, puis intégrée dans la branche publiée `master`.
 
 ## Interaction
 
@@ -167,6 +167,7 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - cache PWA : 22 ressources sur 22 présentes ;
 - contrôle visuel : réussi dans Chrome en vue ordinateur et en émulation mobile réelle à 390 px, sans débordement général ; le grand tableau conserve son défilement horizontal interne ;
 - service worker : activé avec 22 ressources en cache ; seconde page contrôlée et repli réel sur `offline.html` après arrêt du serveur local.
+- publication HTTPS : page INGÉNIA PILOT, sections Alertes et Affiches, service worker V8 et affiche WebP contrôlés sur GitHub Pages.
 
 ## Tests réellement réalisés sur la V2
 
@@ -213,7 +214,7 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - Il ne contient aucun formulaire, aucune base de données et aucune sauvegarde de saisie.
 - Il ne remplace ni les contrats, ni les dossiers techniques, ni les factures, ni le tableau interne autorisé.
 - Il ne doit recevoir aucune donnée confidentielle dans son état actuel.
-- La V8 est validée localement ; sa mise à jour GitHub Pages et son test HTTPS restent à confirmer après le push.
+- La V8 est validée localement et publiée sur GitHub Pages ; son fonctionnement HTTPS a été contrôlé après le push.
 - La page `offline.html` a été testée par navigation réelle après arrêt du serveur local.
 - L’installation réelle de la PWA sur bureau ou écran d’accueil n’a pas été testée.
 
