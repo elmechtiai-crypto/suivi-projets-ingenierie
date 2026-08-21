@@ -1,7 +1,7 @@
 # INGÉNIA PILOT — Pilotage des projets d’ingénierie
 
-**Version :** V8 locale — tableau des priorités, statuts visuels, alertes, affiches intégrées, identité INGÉNIA PILOT et PWA
-**Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7 et enrichissement V8 le 21 août 2026
+**Version :** V9 locale — affiche du prompt maître intégrée à la galerie et au cache PWA
+**Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8 et affiche du prompt maître V9 le 21 août 2026
 **Public :** équipe du bureau d’études techniques
 **Publication :** [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — V8 en ligne
 
@@ -42,7 +42,8 @@ mini-site-ingenia-pilot/
 │       │   ├── affiche-02-chiffres-cles.jpg
 │       │   ├── affiche-02-chiffres-cles.webp
 │       │   ├── affiche-03-manifeste-controle-humain.jpg
-│       │   └── affiche-03-manifeste-controle-humain.webp
+│       │   ├── affiche-03-manifeste-controle-humain.webp
+│       │   └── affiche-prompt-maitre-module-06-ln-ia-v1.png
 │       └── icons/
 │           ├── icon-192.png
 │           └── icon-512.png
@@ -55,7 +56,7 @@ mini-site-ingenia-pilot/
 - `css/styles.css` applique l’identité bleu marine, bleu clair et dorée. Il adapte toutes les sections aux écrans mobiles, tablettes et larges, et rend le focus clavier visible.
 - `js/app.js` active la checklist, charge les données, affiche les 41 missions anonymisées, calcule les indicateurs et priorités, construit les alertes et gère la recherche ainsi que les filtres par statut et année.
 - `data/data.json` contient les bénéfices, les 11 colonnes de suivi et 41 missions sous alias. Il ne contient ni référence réelle, ni client réel, ni objet réel précis, ni montant.
-- `assets/images/` contient les illustrations, le logo fictif, les diagrammes de démonstration, les trois affiches en JPG/WebP et les icônes PWA (`icons/icon-192.png`, `icons/icon-512.png`).
+- `assets/images/` contient les illustrations, le logo fictif, les diagrammes de démonstration, trois affiches en JPG/WebP, l’affiche PNG du prompt maître et les icônes PWA (`icons/icon-192.png`, `icons/icon-512.png`).
 - `manifest.webmanifest` déclare l’identité de l’application (nom, icônes, couleurs, `start_url` et `scope` en chemins relatifs) pour permettre son installation.
 - `service-worker.js` précache l’enveloppe complète du site, purge les anciennes versions du cache à l’activation, et sert le contenu en réseau d’abord avec repli sur le cache puis sur `offline.html` en cas de perte de connexion.
 - `offline.html` s’affiche lors d’une navigation hors connexion vers une page non disponible en cache.
@@ -169,6 +170,25 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - service worker : activé avec 22 ressources en cache ; seconde page contrôlée et repli réel sur `offline.html` après arrêt du serveur local.
 - publication HTTPS : page INGÉNIA PILOT, sections Alertes et Affiches, service worker V8 et affiche WebP contrôlés sur GitHub Pages.
 
+## Affiche du prompt maître V9
+
+- une quatrième affiche illustre les huit étapes du workflow LN-IA des séances S21 à S24 ;
+- la composition regroupe les étapes en quatre stations : comprendre, préparer, versionner et publier ;
+- les règles d’or rappellent la racine contrôlée, les données anonymisées, l’absence de secret et l’interdiction du push forcé ;
+- la validation humaine reste visible à chaque étape ;
+- l’affiche PNG mesure 864 × 1821 px et utilise un texte alternatif descriptif ;
+- la grille de la galerie adopte une disposition équilibrée de deux colonnes sur écran large ;
+- le cache applicatif `ingenia-pilot-v9` inclut 23 ressources.
+
+### Contrôles réalisés sur la V9
+
+- syntaxe de `app.js` et `service-worker.js`, manifeste et données JSON : valides ;
+- 45 identifiants HTML contrôlés, sans doublon, et 23 références locales servies en HTTP 200 ;
+- galerie : 4 affiches, 2 colonnes sur écran large et 1 colonne à 390 px, sans débordement horizontal ;
+- nouvelle affiche : réponse HTTP 200 en `image/png`, dimensions intrinsèques 864 × 1821 px, lien et texte alternatif présents ;
+- service worker : cache `ingenia-pilot-v9` actif avec 23 ressources ;
+- contrôle visuel dans Chrome : réussi sur ordinateur et mobile, sans erreur JavaScript d’exécution.
+
 ## Tests réellement réalisés sur la V2
 
 - ouverture locale dans Microsoft Edge : réussie ;
@@ -215,6 +235,7 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - Il ne remplace ni les contrats, ni les dossiers techniques, ni les factures, ni le tableau interne autorisé.
 - Il ne doit recevoir aucune donnée confidentielle dans son état actuel.
 - La V8 est validée localement et publiée sur GitHub Pages ; son fonctionnement HTTPS a été contrôlé après le push.
+- La V9 contenant l’affiche du prompt maître est préparée localement et n’est pas encore publiée.
 - La page `offline.html` a été testée par navigation réelle après arrêt du serveur local.
 - L’installation réelle de la PWA sur bureau ou écran d’accueil n’a pas été testée.
 
