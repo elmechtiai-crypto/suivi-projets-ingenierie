@@ -1,9 +1,9 @@
 # INGÉNIA PILOT — Pilotage des projets d’ingénierie
 
-**Version :** V9 locale — affiche du prompt maître intégrée à la galerie et au cache PWA
-**Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8 et affiche du prompt maître V9 le 21 août 2026
+**Version :** V9 publiée — affiche du prompt maître intégrée à la galerie et au cache PWA
+**Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8, affiche du prompt maître et publication V9 le 21 août 2026
 **Public :** équipe du bureau d’études techniques
-**Publication :** [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — V8 en ligne
+**Publication :** [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — V9 en ligne et contrôlée
 
 ## Objectif
 
@@ -21,6 +21,7 @@ mini-site-ingenia-pilot/
 ├── offline.html
 ├── manifest.webmanifest
 ├── service-worker.js
+├── RAPPORT-FINAL-GITHUB-PAGES.md
 ├── css/
 │   └── styles.css
 ├── js/
@@ -60,6 +61,7 @@ mini-site-ingenia-pilot/
 - `manifest.webmanifest` déclare l’identité de l’application (nom, icônes, couleurs, `start_url` et `scope` en chemins relatifs) pour permettre son installation.
 - `service-worker.js` précache l’enveloppe complète du site, purge les anciennes versions du cache à l’activation, et sert le contenu en réseau d’abord avec repli sur le cache puis sur `offline.html` en cas de perte de connexion.
 - `offline.html` s’affiche lors d’une navigation hors connexion vers une page non disponible en cache.
+- `RAPPORT-FINAL-GITHUB-PAGES.md` conserve les preuves de publication et les limites des contrôles V9.
 
 ## Ouvrir le mini-site localement
 
@@ -77,9 +79,10 @@ Aucun compte, framework ni CDN n’est nécessaire. Une connexion Internet n’e
 - méthode : `Deploy from a branch` ;
 - branche de publication existante : `master` ;
 - dossier de publication : `/(root)` ;
-- adresse attendue : `https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/`.
+- adresse réelle : `https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/` ;
+- dernier déploiement V9 réussi : commit de fusion `30c10fc`.
 
-La V8 a été préparée sur la branche `publication/preparer-github-pages`, puis intégrée dans la branche publiée `master`.
+La V9 a été préparée sur la branche `publication/integrer-affiche-prompt-maitre`, relue dans la Pull Request nº 1, puis intégrée dans la branche publiée `master`. La configuration Pages existante a automatiquement déployé le commit fusionné.
 
 ## Interaction
 
@@ -187,7 +190,10 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - galerie : 4 affiches, 2 colonnes sur écran large et 1 colonne à 390 px, sans débordement horizontal ;
 - nouvelle affiche : réponse HTTP 200 en `image/png`, dimensions intrinsèques 864 × 1821 px, lien et texte alternatif présents ;
 - service worker : cache `ingenia-pilot-v9` actif avec 23 ressources ;
-- contrôle visuel dans Chrome : réussi sur ordinateur et mobile, sans erreur JavaScript d’exécution.
+- contrôle visuel dans Chrome : réussi sur ordinateur et mobile, sans erreur JavaScript d’exécution ;
+- publication HTTPS : accueil et 23 ressources du cache servis en HTTP 200, sans 404 essentielle ;
+- manifeste public : reconnu sans erreur ; service worker actif sous le bon périmètre GitHub Pages ;
+- fonctionnement hors ligne strict : accueil V9 chargé depuis le cache et page `offline.html` affichée pour une URL non mise en cache.
 
 ## Tests réellement réalisés sur la V2
 
@@ -234,16 +240,16 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - Il ne contient aucun formulaire, aucune base de données et aucune sauvegarde de saisie.
 - Il ne remplace ni les contrats, ni les dossiers techniques, ni les factures, ni le tableau interne autorisé.
 - Il ne doit recevoir aucune donnée confidentielle dans son état actuel.
-- La V8 est validée localement et publiée sur GitHub Pages ; son fonctionnement HTTPS a été contrôlé après le push.
-- La V9 contenant l’affiche du prompt maître est préparée localement et n’est pas encore publiée.
+- La V9 contenant l’affiche du prompt maître est publiée sur GitHub Pages ; son fonctionnement HTTPS, mobile et hors ligne a été contrôlé après le déploiement.
 - La page `offline.html` a été testée par navigation réelle après arrêt du serveur local.
 - L’installation réelle de la PWA sur bureau ou écran d’accueil n’a pas été testée.
+- Le site public n’a pas été testé sur un second appareil physique ; la vue mobile a été contrôlée par émulation Chrome à 390 px.
 
 ## Améliorations possibles
 
 - optimiser davantage le poids des images matricielles ;
 - prévoir une version imprimable contrôlée ;
 - préciser les règles internes de responsabilité et de mise à jour avant toute adaptation opérationnelle ;
-- tester l'installation réelle de la PWA et le test HTTPS avant tout déploiement ;
+- tester l’installation réelle de la PWA et reproduire les contrôles sur un second appareil physique ;
 - exécuter les tests restants : schéma JSON invalide, largeur exacte 320 px.
 - intégrer uniquement des illustrations génériques non identifiables après validation.
