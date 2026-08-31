@@ -1,4 +1,4 @@
-const CACHE_NAME = "ingenia-pilot-v9";
+const CACHE_NAME = "ingenia-pilot-v10-local";
 const CACHE_PREFIXES = ["ingenia-pilot-", "suivi-projets-ingenierie-"];
 const APP_SHELL = [
   "./",
@@ -21,8 +21,7 @@ const APP_SHELL = [
   "./assets/images/affiches/affiche-01-lancement-ingenia-pilot.webp",
   "./assets/images/affiches/affiche-02-chiffres-cles.jpg",
   "./assets/images/affiches/affiche-02-chiffres-cles.webp",
-  "./assets/images/affiches/affiche-03-manifeste-controle-humain.jpg",
-  "./assets/images/affiches/affiche-03-manifeste-controle-humain.webp",
+  "./assets/images/affiches/affiche-04-workflow-github-pages-ln-ia.png",
   "./assets/images/affiches/affiche-prompt-maitre-module-06-ln-ia-v1.png"
 ];
 

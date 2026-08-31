@@ -1,9 +1,9 @@
 # INGÉNIA PILOT — Pilotage des projets d’ingénierie
 
-**Version :** V9 publiée — affiche du prompt maître intégrée à la galerie et au cache PWA
-**Date :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8, affiche du prompt maître et publication V9 le 21 août 2026
+**Version :** V10 validée en local — affiche 03 remplacée par l’affiche 04 et cache PWA actualisé
+**Historique :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8, affiche du prompt maître et publication V9 le 21 août 2026
 **Public :** équipe du bureau d’études techniques
-**Publication :** [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — V9 en ligne et contrôlée
+**Publication :** la V9 historique reste accessible sur [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) ; la publication de la V10 a été autorisée séparément par le candidat le 31 août 2026
 
 ## Objectif
 
@@ -42,8 +42,7 @@ mini-site-ingenia-pilot/
 │       │   ├── affiche-01-lancement-ingenia-pilot.webp
 │       │   ├── affiche-02-chiffres-cles.jpg
 │       │   ├── affiche-02-chiffres-cles.webp
-│       │   ├── affiche-03-manifeste-controle-humain.jpg
-│       │   ├── affiche-03-manifeste-controle-humain.webp
+│       │   ├── affiche-04-workflow-github-pages-ln-ia.png
 │       │   └── affiche-prompt-maitre-module-06-ln-ia-v1.png
 │       └── icons/
 │           ├── icon-192.png
@@ -57,7 +56,7 @@ mini-site-ingenia-pilot/
 - `css/styles.css` applique l’identité bleu marine, bleu clair et dorée. Il adapte toutes les sections aux écrans mobiles, tablettes et larges, et rend le focus clavier visible.
 - `js/app.js` active la checklist, charge les données, affiche les 41 missions anonymisées, calcule les indicateurs et priorités, construit les alertes et gère la recherche ainsi que les filtres par statut et année.
 - `data/data.json` contient les bénéfices, les 11 colonnes de suivi et 41 missions sous alias. Il ne contient ni référence réelle, ni client réel, ni objet réel précis, ni montant.
-- `assets/images/` contient les illustrations, le logo fictif, les diagrammes de démonstration, trois affiches en JPG/WebP, l’affiche PNG du prompt maître et les icônes PWA (`icons/icon-192.png`, `icons/icon-512.png`).
+- `assets/images/` contient les illustrations, le logo fictif, les diagrammes de démonstration, deux affiches en JPG/WebP, deux affiches de workflow en PNG et les icônes PWA (`icons/icon-192.png`, `icons/icon-512.png`).
 - `manifest.webmanifest` déclare l’identité de l’application (nom, icônes, couleurs, `start_url` et `scope` en chemins relatifs) pour permettre son installation.
 - `service-worker.js` précache l’enveloppe complète du site, purge les anciennes versions du cache à l’activation, et sert le contenu en réseau d’abord avec repli sur le cache puis sur `offline.html` en cas de perte de connexion.
 - `offline.html` s’affiche lors d’une navigation hors connexion vers une page non disponible en cache.
@@ -194,6 +193,39 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - publication HTTPS : accueil et 23 ressources du cache servis en HTTP 200, sans 404 essentielle ;
 - manifeste public : reconnu sans erreur ; service worker actif sous le bon périmètre GitHub Pages ;
 - fonctionnement hors ligne strict : accueil V9 chargé depuis le cache et page `offline.html` affichée pour une URL non mise en cache.
+
+## Correction P06 — V10 validée pour publication
+
+Le 28 août 2026, après confirmation des droits visuels et autorisation humaine
+explicite, la correction P06 a été préparée. Les contrôles navigateur et la
+validation humaine locale ont été terminés le 31 août 2026 :
+
+- l’affiche 03 exclue a été remplacée dans la galerie par `affiche-04-workflow-github-pages-ln-ia.png` ;
+- les références à l’ancienne affiche ont été retirées de `index.html` et `service-worker.js` ;
+- les deux anciens actifs JPG/WebP ont été retirés du mini-site local ;
+- le cache local a été incrémenté vers `ingenia-pilot-v10-local` et contient 22 ressources ;
+- la phase 9 complète (commit, push et publication GitHub Pages) a été autorisée
+  séparément par le candidat le 31 août 2026.
+
+### Contrôles locaux de la correction
+
+- syntaxe de `app.js` et `service-worker.js` : valide avec `node --check` ;
+- `data/data.json` et `manifest.webmanifest` : JSON valides ;
+- 45 identifiants HTML : aucun doublon ;
+- 22 références locales HTML : toutes présentes ;
+- cache `ingenia-pilot-v10-local` : 22 ressources déclarées et présentes ;
+- serveur local : 22 ressources sur 22 servies en HTTP 200 ;
+- nouvelle affiche 04 : HTTP 200, type `image/png`, dimensions 1024 × 1536 px ;
+- anciennes URL JPG/WebP : HTTP 404 attendu ;
+- données : 41 missions, dont 7 alertes possédant chacune un blocage et une action ;
+- ancienne référence, ancien fichier et mention exclue dans le mini-site public local : aucune occurrence ;
+- contrôle navigateur ordinateur 1 440 × 900 et mobile 390 × 844 : réussi sans
+  débordement horizontal ni image cassée ; affiche 04 visible ;
+- service worker actif : cache `ingenia-pilot-v10-local` de 22 entrées et purge
+  du cache témoin V9 réussie ;
+- rechargement sans serveur local : 41 missions, 7 alertes et 4 affiches
+  restaurées ; ressource témoin non cachée en HTTP 503 ;
+- validation humaine locale : accordée par le candidat le 31 août 2026.
 
 ## Tests réellement réalisés sur la V2
 
