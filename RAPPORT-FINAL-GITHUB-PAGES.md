@@ -57,3 +57,43 @@
 ## Conclusion
 
 Le mini-site V9 est public, partageable et conforme au périmètre contrôlé. La nouvelle affiche illustre les étapes S21 à S24 du prompt maître et reste disponible en ligne comme hors connexion après précache.
+
+## Addendum — publication INGÉNIA PILOT V10
+
+**Date :** 31 août 2026
+**Statut :** PUBLICATION V10 DÉPLOYÉE ET CONTRÔLÉE
+
+### Décision et Git
+
+- validation humaine locale : accordée le 31 août 2026 ;
+- phase 9 complète : autorisée séparément par le candidat ;
+- commit V10 : `5229420122f41c47d65ba0bad238a71f9f08c8cf` ;
+- branche de travail poussée : `documentation/finaliser-publication-v9` ;
+- fusion : avance rapide vers `master` ;
+- push `master` : réussi ;
+- déploiement Pages : exécution `33406469601`, conclusion `success`.
+
+### Contrôles publics V10
+
+- URL : `https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/` ;
+- titre public : `INGÉNIA PILOT — Pilotage des projets d’ingénierie` ;
+- données publiques : 41 missions et 7 alertes ;
+- galerie : quatre affiches, affiche 04 visible et affiche 03 absente ;
+- affiche 04 : HTTP 200, type `image/png` ;
+- anciennes URL de l'affiche 03 : HTTP 404 pour JPG et WebP ;
+- service worker : cache `ingenia-pilot-v10-local`, 22 ressources déclarées ;
+- affichage public : réussi à 1 440 × 900 et 390 × 844 px, sans débordement
+  horizontal ni image cassée ;
+- confidentialité : aucune des 101 valeurs réelles contrôlées n'est présente
+  dans le dépôt public ; aucun fichier privé n'est suivi par Git.
+
+### Limites
+
+- les vues ordinateur et mobile ont été contrôlées dans un profil Edge isolé,
+  pas sur deux appareils physiques distincts ;
+- le nom de cache `ingenia-pilot-v10-local` est conservé car il correspond à
+  l'artefact validé humainement avant publication ;
+- aucune release GitHub séparée n'a été créée.
+
+La V10 remplace désormais la V9 sur GitHub Pages. Elle est publique,
+partageable et reliée au commit ainsi qu'à l'exécution de déploiement ci-dessus.

@@ -1,9 +1,9 @@
 # INGÉNIA PILOT — Pilotage des projets d’ingénierie
 
-**Version :** V10 validée en local — affiche 03 remplacée par l’affiche 04 et cache PWA actualisé
-**Historique :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8, affiche du prompt maître et publication V9 le 21 août 2026
+**Version :** V10 publiée et contrôlée — affiche 03 remplacée par l’affiche 04 et cache PWA actualisé
+**Historique :** V1 le 30 juillet 2026 ; PWA V2 les 8-9 août 2026 ; portefeuille V3 le 14 août 2026 ; affiches V5, identité V6, alertes V7, enrichissement V8, publication V9 le 21 août 2026 et publication V10 le 31 août 2026
 **Public :** équipe du bureau d’études techniques
-**Publication :** la V9 historique reste accessible sur [GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) ; la publication de la V10 a été autorisée séparément par le candidat le 31 août 2026
+**Publication :** [V10 sur GitHub Pages](https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/) — déploiement et contrôle public réussis le 31 août 2026
 
 ## Objectif
 
@@ -194,7 +194,7 @@ Si JavaScript est indisponible, le contenu de la checklist reste présent dans l
 - manifeste public : reconnu sans erreur ; service worker actif sous le bon périmètre GitHub Pages ;
 - fonctionnement hors ligne strict : accueil V9 chargé depuis le cache et page `offline.html` affichée pour une URL non mise en cache.
 
-## Correction P06 — V10 validée pour publication
+## Correction P06 — V10 publiée et contrôlée
 
 Le 28 août 2026, après confirmation des droits visuels et autorisation humaine
 explicite, la correction P06 a été préparée. Les contrôles navigateur et la
@@ -226,6 +226,21 @@ validation humaine locale ont été terminés le 31 août 2026 :
 - rechargement sans serveur local : 41 missions, 7 alertes et 4 affiches
   restaurées ; ressource témoin non cachée en HTTP 503 ;
 - validation humaine locale : accordée par le candidat le 31 août 2026.
+
+### Publication GitHub Pages V10
+
+- commit fonctionnel : `5229420122f41c47d65ba0bad238a71f9f08c8cf` ;
+- branche publiée : `master` ;
+- déploiement GitHub Pages : exécution `33406469601`, conclusion `success` ;
+- accueil public : titre INGÉNIA PILOT, 41 missions et 7 alertes ;
+- affiche 04 publique : HTTP 200 en `image/png` ;
+- anciennes affiches 03 JPG et WebP : HTTP 404 attendu ;
+- service worker public : cache `ingenia-pilot-v10-local`, affiche 04 présente et
+  ancienne affiche 03 absente ;
+- contrôle visuel public à 1 440 × 900 et 390 × 844 px : aucun débordement,
+  aucune image cassée et affiche 04 visible ;
+- contrôle de confidentialité avant publication : 101 valeurs réelles testées,
+  aucune correspondance exacte dans le dépôt public.
 
 ## Tests réellement réalisés sur la V2
 
