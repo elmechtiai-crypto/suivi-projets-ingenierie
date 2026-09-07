@@ -1,0 +1,25 @@
+{
+  "name": "INGÉNIA PILOT — Pilotage des projets d’ingénierie",
+  "short_name": "INGÉNIA PILOT",
+  "description": "Application légère de pilotage des projets d’ingénierie, conçue pour repérer les blocages et préparer les actions prioritaires.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#123153",
+  "icons": [
+    {
+      "src": "./assets/images/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/images/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

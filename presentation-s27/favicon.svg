@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Monogramme INGÉNIA PILOT</title>
+  <desc id="desc">Les lettres IP en blanc et turquoise sur un carré bleu nuit.</desc>
+  <rect width="64" height="64" rx="14" fill="#071b33"/>
+  <path d="M14 14h8v36h-8z" fill="#f8fafc"/>
+  <path d="M29 14h12c8 0 13 5 13 12s-5 12-13 12h-4v12h-8V14zm8 8v8h4c3 0 5-1 5-4s-2-4-5-4h-4z" fill="#2dd4bf"/>
+</svg>
