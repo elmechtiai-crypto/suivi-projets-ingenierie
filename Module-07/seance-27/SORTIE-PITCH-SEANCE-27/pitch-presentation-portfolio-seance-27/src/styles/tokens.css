@@ -1,0 +1,31 @@
+:root {
+  color-scheme: dark;
+  --color-ink: #f8fafc;
+  --color-muted: #b8c5d6;
+  --color-bg: #061426;
+  --color-bg-soft: #081a31;
+  --color-surface: #0b223d;
+  --color-surface-strong: #102d4d;
+  --color-cyan: #2dd4bf;
+  --color-cyan-soft: #8ee8dc;
+  --color-gold: #e7bd68;
+  --color-danger: #ff8b8b;
+  --color-success: #79dfb2;
+  --color-focus: #f8d477;
+  --color-border: rgb(148 183 210 / 28%);
+  --color-border-strong: rgb(45 212 191 / 48%);
+  --shadow-card: 0 24px 70px rgb(0 0 0 / 32%);
+  --shadow-soft: 0 12px 32px rgb(0 0 0 / 20%);
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.5rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --content-width: 72rem;
+  --header-height: 5.5rem;
+}

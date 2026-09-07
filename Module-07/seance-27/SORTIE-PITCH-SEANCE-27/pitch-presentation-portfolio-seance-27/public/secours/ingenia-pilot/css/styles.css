@@ -163,18 +163,6 @@ nav a:hover {
   background: var(--color-accent);
 }
 
-.site-header nav .presentation-nav-link {
-  color: var(--color-primary-dark);
-  background: var(--color-accent);
-  border: 0.08rem solid var(--color-accent);
-}
-
-.site-header nav .presentation-nav-link:hover {
-  color: var(--color-surface);
-  background: var(--color-primary);
-  border-color: var(--color-surface);
-}
-
 .alert-icon {
   width: 1.1rem;
   height: 1.1rem;

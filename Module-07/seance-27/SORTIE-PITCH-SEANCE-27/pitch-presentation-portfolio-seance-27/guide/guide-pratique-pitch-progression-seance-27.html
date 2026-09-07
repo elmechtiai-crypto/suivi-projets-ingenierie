@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide pratique - Préparer son pitch et démontrer sa progression - Séance 27</title>
+  <style>
+    :root {
+      --navy: #071b2d;
+      --navy-2: #10344a;
+      --cream: #f7f4ec;
+      --paper: #fffdf8;
+      --cyan: #11b8c5;
+      --cyan-soft: #dff7f7;
+      --gold: #d8ab52;
+      --ink: #17232d;
+      --muted: #56636c;
+      --line: #d9e0e2;
+      --ok: #087e72;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #dbe2e5;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.42;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body { counter-reset: page; }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 8mm auto;
+      padding: 15mm 18mm 14mm;
+      overflow: hidden;
+      background: var(--paper);
+      page-break-after: always;
+      break-after: page;
+      counter-increment: page;
+      box-shadow: 0 12px 34px rgba(7, 27, 45, 0.18);
+    }
+
+    .page:last-child { page-break-after: auto; break-after: auto; }
+
+    .cover {
+      color: #fff;
+      background:
+        linear-gradient(145deg, rgba(7, 27, 45, 0.98), rgba(9, 48, 67, 0.93)),
+        url("../public/assets/images/hero-workflow-s27-v1.png") center / cover;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: auto -30mm -40mm auto;
+      width: 145mm;
+      height: 145mm;
+      border: 1px solid rgba(17, 184, 197, 0.32);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24mm rgba(17, 184, 197, 0.055), 0 0 0 48mm rgba(216, 171, 82, 0.035);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 10pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1.5px solid var(--gold);
+      border-radius: 10px;
+      color: var(--cyan);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .cover-main { position: relative; z-index: 1; margin-top: 40mm; max-width: 154mm; }
+
+    .eyebrow {
+      margin: 0 0 5mm;
+      color: var(--cyan);
+      font-size: 9pt;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 155mm;
+      margin: 0;
+      font-size: 30pt;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .cover .lead {
+      max-width: 133mm;
+      margin: 8mm 0 0;
+      color: #dbe9ee;
+      font-size: 14pt;
+      line-height: 1.45;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm 12mm;
+      margin-top: 18mm;
+      padding: 7mm;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 4mm;
+      background: rgba(7, 27, 45, 0.65);
+    }
+
+    .cover-meta span { display: block; color: #a9c0c9; font-size: 8.3pt; text-transform: uppercase; letter-spacing: 0.09em; }
+    .cover-meta strong { display: block; margin-top: 1mm; color: #fff; font-size: 10.5pt; }
+
+    .principle {
+      position: absolute;
+      z-index: 1;
+      left: 18mm;
+      bottom: 25mm;
+      max-width: 155mm;
+      padding-left: 5mm;
+      border-left: 2px solid var(--gold);
+      color: #fff;
+      font-size: 12pt;
+      font-weight: 700;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 7mm;
+      padding-bottom: 3mm;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 8.5pt;
+    }
+
+    .page-header .brand { color: var(--navy); font-size: 8pt; }
+    .page-header .brand-mark { width: 25px; height: 25px; border-radius: 7px; }
+
+    h2 {
+      margin: 0 0 3mm;
+      color: var(--navy);
+      font-size: 22pt;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    h3 { margin: 4mm 0 2mm; color: var(--navy-2); font-size: 12.5pt; line-height: 1.25; }
+    p { margin: 0 0 2.5mm; }
+    ul, ol { margin: 2mm 0 3mm; padding-left: 5.5mm; }
+    li { margin: 0 0 1.4mm; }
+
+    .intro { max-width: 155mm; color: var(--muted); font-size: 11.5pt; }
+    .accent { color: var(--ok); font-weight: 800; }
+    .gold { color: #9a6a0c; font-weight: 800; }
+    .small { color: var(--muted); font-size: 8.7pt; }
+
+    .callout {
+      margin: 3.5mm 0;
+      padding: 4mm 5mm;
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 3mm 3mm 0;
+      background: var(--cyan-soft);
+      color: var(--navy);
+    }
+
+    .callout.gold-box { border-color: var(--gold); background: #fbf2df; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin: 5mm 0;
+    }
+
+    .metric {
+      padding: 4mm;
+      border: 1px solid var(--line);
+      border-radius: 3mm;
+      background: #fff;
+    }
+
+    .metric strong { display: block; color: var(--navy); font-size: 21pt; line-height: 1; }
+    .metric span { display: block; margin-top: 2mm; color: var(--muted); font-size: 8.8pt; }
+
+    .six-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+
+    .block-card {
+      min-height: 36mm;
+      padding: 4mm;
+      border: 1px solid var(--line);
+      border-radius: 3mm;
+      background: #fff;
+    }
+
+    .block-card .num {
+      display: inline-grid;
+      width: 8mm;
+      height: 8mm;
+      margin-bottom: 3mm;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .block-card h3 { display: inline; margin-left: 2mm; font-size: 11.5pt; }
+    .block-card p { margin-top: 2mm; color: var(--muted); font-size: 9.2pt; }
+
+    table { width: 100%; border-collapse: collapse; margin: 5mm 0; font-size: 8.8pt; }
+    th { padding: 3mm; background: var(--navy); color: #fff; text-align: left; font-weight: 700; }
+    td { padding: 3mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tbody tr:nth-child(even) td { background: #f2f7f7; }
+
+    .timeline { margin: 5mm 0 3mm; }
+    .timeline-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 28mm 1fr 30mm;
+      gap: 5mm;
+      align-items: start;
+      padding: 3mm 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .time { color: var(--ok); font-size: 9pt; font-weight: 800; }
+    .timeline-step strong { color: var(--navy); }
+    .proof { color: #8b6519; font-size: 8.6pt; font-weight: 700; text-align: right; }
+
+    .route { display: grid; gap: 3mm; margin: 6mm 0; }
+    .route-step {
+      display: grid;
+      grid-template-columns: 10mm 1fr 43mm;
+      gap: 4mm;
+      align-items: center;
+      padding: 3.5mm 4mm;
+      border: 1px solid var(--line);
+      border-radius: 3mm;
+      background: #fff;
+    }
+    .route-step b { display: grid; width: 8mm; height: 8mm; place-items: center; border-radius: 50%; background: var(--cyan); color: var(--navy); }
+    .route-step span:last-child { color: var(--muted); font-size: 8.5pt; text-align: right; }
+
+    .progression { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 8mm 0; }
+    .stage { position: relative; min-height: 85mm; padding: 6mm; border-radius: 4mm; background: #fff; border: 1px solid var(--line); }
+    .stage::after { content: ">"; position: absolute; right: -4.5mm; top: 38mm; color: var(--gold); font-size: 18pt; font-weight: 900; }
+    .stage:last-child::after { display: none; }
+    .stage .tag { color: var(--ok); font-size: 9pt; font-weight: 900; letter-spacing: .08em; }
+    .stage h3 { margin-top: 3mm; }
+    .stage p { color: var(--muted); font-size: 9.1pt; }
+    .stage strong { display: block; margin-top: 5mm; color: var(--navy); font-size: 18pt; }
+
+    .roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 6mm 0; }
+    .role { padding: 5mm; border-radius: 4mm; background: #fff; border: 1px solid var(--line); }
+    .role h3 { margin: 0 0 3mm; }
+    .role ul { padding-left: 4.5mm; color: var(--muted); font-size: 9pt; }
+
+    .questions { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 5mm; }
+    .question { padding: 4.5mm; border: 1px solid var(--line); border-radius: 3mm; background: #fff; }
+    .question h3 { margin: 0 0 2mm; font-size: 10.5pt; }
+    .question p { color: var(--muted); font-size: 8.6pt; }
+    .question .formula { margin: 2mm 0 0; color: var(--ok); font-size: 8pt; font-weight: 800; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; margin-top: 5mm; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { position: relative; padding: 2.4mm 2mm 2.4mm 10mm; border-bottom: 1px solid var(--line); }
+    .checklist li::before { content: ""; position: absolute; left: 1mm; top: 2.8mm; width: 4.5mm; height: 4.5mm; border: 1.5px solid var(--cyan); border-radius: 1mm; }
+
+    .fallback { margin: 4mm 0; padding: 4mm; border-radius: 3mm; background: var(--navy); color: #fff; font-size: 9pt; }
+    .fallback div { padding: 2.2mm 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .fallback div:last-child { border: 0; }
+    .fallback b { display: inline-block; width: 8mm; color: var(--gold); }
+
+    .status-list { display: grid; gap: 2mm; margin-top: 3mm; }
+    .status-row { display: grid; grid-template-columns: 57mm 1fr; gap: 5mm; padding: 3mm 4mm; border-radius: 2.5mm; background: #eef4f4; }
+    .status-row strong { color: var(--navy); font-size: 8.5pt; }
+    .status-row span { color: var(--muted); font-size: 8.5pt; }
+
+    .signature {
+      margin-top: 5mm;
+      padding: 4mm;
+      border: 1px dashed #96a6ad;
+      border-radius: 3mm;
+      color: var(--muted);
+      font-size: 9pt;
+    }
+
+    .page-footer {
+      position: absolute;
+      left: 18mm;
+      right: 18mm;
+      bottom: 8mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 3mm;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 8pt;
+    }
+
+    .page-footer .page-number::before { content: counter(page, decimal-leading-zero) " / 08"; }
+    a { color: #066d77; text-decoration: underline; text-underline-offset: 2px; }
+
+    @media print {
+      html, body { background: transparent; }
+      .page { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page cover">
+    <div class="brand"><span class="brand-mark">IP</span> INGÉNIA PILOT</div>
+    <div class="cover-main">
+      <p class="eyebrow">Challenge 100 Jours - Module 07 - Séance 27</p>
+      <h1>Guide pratique<br>Préparer son pitch et démontrer sa progression</h1>
+      <p class="lead">Un parcours court, factuel et vérifiable pour présenter une production, expliquer sa progression et reconnaître ses limites.</p>
+      <div class="cover-meta">
+        <div><span>Candidat</span><strong>Karim El Mechti</strong></div>
+        <div><span>Destinataire</span><strong>M. Abderrahman</strong></div>
+        <div><span>Projet</span><strong>INGÉNIA PILOT</strong></div>
+        <div><span>Statut</span><strong>À COMPLÉTER</strong></div>
+      </div>
+    </div>
+    <p class="principle">L'IA assiste. L'humain pilote, contrôle et décide.</p>
+    <footer class="page-footer" style="color:#b9cbd2;border-color:rgba(255,255,255,.2)">
+      <span>Guide pratique S27</span><span class="page-number"></span>
+    </footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Objectif et structure</span></header>
+    <p class="eyebrow">01 - Cadrer le message</p>
+    <h2>Une présentation courte, utile et prouvée</h2>
+    <p class="intro">L'objectif est de présenter un besoin professionnel, une production principale et une progression vérifiable. Chaque affirmation importante doit conduire à une preuve ou à une limite clairement reconnue.</p>
+
+    <div class="metrics">
+      <div class="metric"><strong>3-5 min</strong><span>durée cible du pitch</span></div>
+      <div class="metric"><strong>2-3 min</strong><span>durée cible de la démonstration</span></div>
+      <div class="metric"><strong>4</strong><span>questions factuelles préparées</span></div>
+    </div>
+
+    <h3>Les six blocs indispensables</h3>
+    <div class="six-grid">
+      <section class="block-card"><span class="num">1</span><h3>Activité ou sujet</h3><p>Mon rôle, le sujet choisi et la personne à qui la production s'adresse.</p></section>
+      <section class="block-card"><span class="num">2</span><h3>Besoin traité</h3><p>La difficulté observée et le résultat attendu, sans les confondre avec un impact mesuré.</p></section>
+      <section class="block-card"><span class="num">3</span><h3>Production</h3><p>Une seule production existante : INGÉNIA PILOT V10 et son parcours essentiel.</p></section>
+      <section class="block-card"><span class="num">4</span><h3>Progression</h3><p>État initial, écart détecté, correction, état final observé et réserve restante.</p></section>
+      <section class="block-card"><span class="num">5</span><h3>Méthode avec l'IA</h3><p>Décisions du candidat, assistance de l'IA et vérifications humaines.</p></section>
+      <section class="block-card"><span class="num">6</span><h3>Prochaine étape</h3><p>Une action réaliste, un critère observable et une dépendance annoncée.</p></section>
+    </div>
+
+    <div class="callout gold-box"><strong>État observé :</strong> pitch à 6 minutes. Priorité : retirer au moins une minute tout en conservant les six blocs.</div>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Déroulé du pitch</span></header>
+    <p class="eyebrow">02 - Tenir en moins de cinq minutes</p>
+    <h2>Un fil narratif en six temps</h2>
+    <p class="intro">Une idée forte par bloc, une preuve utile et une transition courte. Le portfolio complet reste une réserve de preuves, pas un texte à réciter.</p>
+
+    <div class="timeline">
+      <div class="timeline-step"><span class="time">0:00-0:30</span><div><strong>Ouverture</strong><br><span class="small">Qui je suis, mon sujet et M. Abderrahman.</span></div><span class="proof">Portfolio</span></div>
+      <div class="timeline-step"><span class="time">0:30-1:10</span><div><strong>Besoin</strong><br><span class="small">Rendre alertes, blocages et actions lisibles.</span></div><span class="proof">P06</span></div>
+      <div class="timeline-step"><span class="time">1:10-2:10</span><div><strong>Production principale</strong><br><span class="small">41 missions, 7 alertes et une limite explicite.</span></div><span class="proof">V10</span></div>
+      <div class="timeline-step"><span class="time">2:10-3:10</span><div><strong>Progression</strong><br><span class="small">P02, P03, puis P06 : montrer le changement.</span></div><span class="proof">Avant/après</span></div>
+      <div class="timeline-step"><span class="time">3:10-4:10</span><div><strong>Méthode</strong><br><span class="small">Candidat, IA et contrôle humain.</span></div><span class="proof">P05 + P06</span></div>
+      <div class="timeline-step"><span class="time">4:10-4:40</span><div><strong>Suite</strong><br><span class="small">Réduire, tester le secours et chronométrer.</span></div><span class="proof">Mesures S27</span></div>
+    </div>
+
+    <h3>Transitions à mémoriser</h3>
+    <div class="callout">« Ce besoin m'a conduit à une production principale. »</div>
+    <div class="callout">« Pour comprendre le résultat, je montre maintenant ma progression. »</div>
+    <div class="callout">« Cette progression repose sur une méthode où les responsabilités restent distinctes. »</div>
+    <div class="callout">« Je termine par la limite actuelle et l'action suivante. »</div>
+
+    <p class="small"><strong>Règle de coupe :</strong> supprimer les détails qui ne changent ni le besoin, ni la preuve, ni la limite. Ne jamais accélérer au point de perdre la clarté.</p>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Démonstration</span></header>
+    <p class="eyebrow">03 - Montrer une seule production</p>
+    <h2>Parcours INGÉNIA PILOT en 2 à 3 minutes</h2>
+    <p class="intro">La démonstration doit faire observer une action utile. Elle ne remplace pas le pitch et ne doit pas ouvrir plusieurs productions.</p>
+
+    <div class="route">
+      <div class="route-step"><b>1</b><span><strong>Ouvrir la V10</strong><br><span class="small">Nommer la production principale.</span></span><span>0:00-0:20</span></div>
+      <div class="route-step"><b>2</b><span><strong>Montrer la synthèse</strong><br><span class="small">41 missions fictives visibles.</span></span><span>0:20-0:45</span></div>
+      <div class="route-step"><b>3</b><span><strong>Ouvrir les alertes</strong><br><span class="small">7 situations à clarifier.</span></span><span>0:45-1:25</span></div>
+      <div class="route-step"><b>4</b><span><strong>Lire une action</strong><br><span class="small">Blocage, action et responsable générique.</span></span><span>1:25-1:55</span></div>
+      <div class="route-step"><b>5</b><span><strong>Retrouver le statut</strong><br><span class="small">Tableau filtré sur l'état concerné.</span></span><span>1:55-2:20</span></div>
+      <div class="route-step"><b>6</b><span><strong>Annoncer la limite</strong><br><span class="small">Démonstrateur sans saisie ni base de données.</span></span><span>2:20-2:40</span></div>
+    </div>
+
+    <div class="callout"><strong>Résultat observable :</strong> une alerte, son blocage et son action peuvent être retrouvés rapidement.</div>
+    <div class="callout gold-box"><strong>Limite :</strong> aucun usage opérationnel ni gain de temps professionnel n'est mesuré.</div>
+
+    <h3>Accès et secours</h3>
+    <p><a href="https://elmechtiai-crypto.github.io/suivi-projets-ingenierie/">Ouvrir la V10 publique documentée</a></p>
+    <p class="small">Secours inclus dans le site S27 : <strong>public/secours/ingenia-pilot/index.html</strong>. Son chargement technique a réussi ; l'essai humain dans le navigateur de présentation reste obligatoire.</p>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Progression avant/après</span></header>
+    <p class="eyebrow">04 - Prouver le changement</p>
+    <h2>De la PWA descriptive à la V10</h2>
+    <p class="intro">La progression relie un état initial, un écart, une correction et un résultat observé. Elle évite de confondre intention, production et impact.</p>
+
+    <div class="progression">
+      <section class="stage"><span class="tag">S19 - P02</span><h3>Point de départ</h3><p>PWA descriptive sans mission ni alerte dans la preuve retenue.</p><strong>0 mission</strong><span class="small">état initial observé</span></section>
+      <section class="stage"><span class="tag">S20 - P03</span><h3>Correction</h3><p>Paquet déployable et précache étendu, avec contrôle documenté.</p><strong>16 ressources</strong><span class="small">cache corrigé</span></section>
+      <section class="stage"><span class="tag">V10 - P06</span><h3>État final</h3><p>Portefeuille fictif, alertes, blocages, actions et limites visibles.</p><strong>41 / 7</strong><span class="small">missions / alertes</span></section>
+    </div>
+
+    <div class="callout"><strong>Phrase de synthèse :</strong> « Je suis passé d'une PWA descriptive sans mission à une V10 qui affiche 41 missions et 7 alertes, avec une correction du cache documentée entre les deux. »</div>
+
+    <h3>Réserve à annoncer</h3>
+    <p>L'ancien fichier du cache S20 n'est pas conservé séparément. Le journal de test complète la preuve. Il faut annoncer cette limite au lieu de laisser croire qu'un historique technique absent est disponible.</p>
+
+    <table>
+      <thead><tr><th>Élément</th><th>Ce qui est prouvé</th><th>Ce qui ne l'est pas</th></tr></thead>
+      <tbody>
+        <tr><td>Progression</td><td>contenu, compteurs et cache documentés</td><td>impact métier mesuré</td></tr>
+        <tr><td>Production</td><td>démonstrateur accessible</td><td>outil opérationnel</td></tr>
+        <tr><td>Méthode</td><td>décisions et contrôles consignés</td><td>autonomie complète sans assistance</td></tr>
+      </tbody>
+    </table>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Responsabilités et questions</span></header>
+    <p class="eyebrow">05 - Expliquer qui fait quoi</p>
+    <h2>Candidat, IA et contrôle humain</h2>
+    <div class="roles">
+      <section class="role"><h3>Candidat</h3><ul><li>définit le besoin</li><li>choisit les fonctions</li><li>décide les exclusions</li><li>assume la présentation</li></ul></section>
+      <section class="role"><h3>IA</h3><ul><li>propose une structure</li><li>reformule</li><li>génère des éléments</li><li>prépare tests et documentation</li></ul></section>
+      <section class="role"><h3>Contrôle humain</h3><ul><li>vérifie les faits</li><li>teste le résultat</li><li>corrige et autorise</li><li>prononce le statut final</li></ul></section>
+    </div>
+    <div class="callout"><strong>L'IA assiste. L'humain pilote, contrôle et décide.</strong></div>
+
+    <h3>Quatre réponses en 20 à 40 secondes</h3>
+    <div class="questions">
+      <section class="question"><h3>1. Quel besoin est traité ?</h3><p>Rendre un portefeuille lisible et retrouver une alerte, son blocage et son action. Preuve : P06. Limite : démonstrateur.</p><p class="formula">Fait > preuve > limite</p></section>
+      <section class="question"><h3>2. Quelle preuve montre la progression ?</h3><p>P02, P03 et P06 montrent le passage d'une PWA sans mission à une V10 avec 41 missions et 7 alertes.</p><p class="formula">Comparer > expliquer > réserver</p></section>
+      <section class="question"><h3>3. Quel rôle a joué l'IA ?</h3><p>Le candidat décide ; l'IA structure et propose ; le contrôle humain lit, teste, corrige et autorise.</p><p class="formula">Décision > assistance > contrôle</p></section>
+      <section class="question"><h3>4. Quelle limite et quelle suite ?</h3><p>Le pitch dure 6 minutes. Il faut le réduire, tester le secours et chronométrer les quatre réponses.</p><p class="formula">Limite > action > critère</p></section>
+    </div>
+
+    <p class="small"><strong>Ne jamais divulguer :</strong> noms ou références réels, montants, fichiers privés, comptes personnels, tokens, mots de passe, cookies ou historique de navigation.</p>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Sécurité et secours</span></header>
+    <p class="eyebrow">06 - Préparer l'imprévu</p>
+    <h2>Checklist avant d'entrer en présentation</h2>
+    <div class="two-col">
+      <section>
+        <h3>Écran et confidentialité</h3>
+        <ul class="checklist">
+          <li>Fermer comptes, notifications et documents professionnels.</li>
+          <li>Ne jamais ouvrir la correspondance réel-fictif.</li>
+          <li>Utiliser uniquement les données fictives du démonstrateur.</li>
+          <li>Vérifier l'absence de token, mot de passe, cookie ou secret.</li>
+          <li>Conserver un zoom lisible et un écran sans onglet privé.</li>
+        </ul>
+        <h3>Production</h3>
+        <ul class="checklist">
+          <li>Vérifier 41 missions et 7 alertes.</li>
+          <li>Ouvrir une carte complète et son tableau filtré.</li>
+          <li>Charger la version locale avant l'arrivée du destinataire.</li>
+          <li>Préparer les captures de validation.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Ordre de repli</h3>
+        <div class="fallback">
+          <div><b>1</b> Production publique</div>
+          <div><b>2</b> Copie locale S27</div>
+          <div><b>3</b> Page déjà chargée</div>
+          <div><b>4</b> Captures de preuve</div>
+          <div><b>5</b> Explication verbale factuelle</div>
+        </div>
+        <h3>Réponses honnêtes en cas d'incident</h3>
+        <p class="small"><strong>URL indisponible :</strong> « Je poursuis avec la version locale contrôlée. »</p>
+        <p class="small"><strong>Compteur différent :</strong> « L'état affiché ne correspond pas à la version contrôlée ; je ne valide pas ce résultat. »</p>
+        <p class="small"><strong>Donnée inattendue :</strong> masquer l'écran et arrêter immédiatement la démonstration.</p>
+      </section>
+    </div>
+
+    <div class="callout gold-box"><strong>Critère obligatoire :</strong> la copie locale doit être testée par le candidat sur l'ordinateur et le navigateur réellement utilisés avant tout statut « Prêt pour présentation ».</div>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+
+  <article class="page">
+    <header class="page-header"><span class="brand"><span class="brand-mark">IP</span> Séance 27</span><span>Répétition et décision</span></header>
+    <p class="eyebrow">07 - Mesurer, corriger, faire valider</p>
+    <h2>Trois répétitions, une correction à la fois</h2>
+    <table>
+      <thead><tr><th>Essai</th><th>Durée pitch</th><th>Durée démo</th><th>Écart principal</th><th>Correction</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+
+    <p class="small">Après chaque essai, corriger un seul écart prioritaire. Cibles : pitch 3 à 5 minutes, démonstration 2 à 3 minutes, chaque réponse 20 à 40 secondes.</p>
+
+    <h3>Statuts autorisés</h3>
+    <div class="status-list">
+      <div class="status-row"><strong>À COMPLÉTER</strong><span>Des contrôles, répétitions ou décisions restent à effectuer.</span></div>
+      <div class="status-row"><strong>PRÊT POUR PRÉSENTATION - VALIDATION HUMAINE REQUISE</strong><span>Les critères sont contrôlés ; la décision appartient encore au pilote.</span></div>
+      <div class="status-row"><strong>FINALISTE PROPOSÉ - DÉCISION HUMAINE REQUISE</strong><span>La proposition est documentée mais non définitive.</span></div>
+      <div class="status-row"><strong>BLOQUÉ - DÉCISION OU SOURCE MANQUANTE</strong><span>La poursuite exige une décision ou une source complémentaire.</span></div>
+    </div>
+
+    <div class="callout"><strong>Règle :</strong> FINALISTE PROPOSÉ n'est pas FINALISTE CONFIRMÉ. Le statut final est prononcé uniquement par le pilote humain.</div>
+
+    <h3>Validation du guide et de la répétition</h3>
+    <div class="signature">
+      Date : ____________________ &nbsp;&nbsp; Durée finale du pitch : ____________________<br><br>
+      Secours local testé : OUI / NON &nbsp;&nbsp; Questions chronométrées : OUI / NON<br><br>
+      Décision ou correction du pilote : ________________________________________________
+    </div>
+
+    <p class="small" style="margin-top:5mm"><strong>Références :</strong> matrice sources-pitch, script V1, plan de démonstration, quatre questions-réponses et rapport d'intégration de la phase 6. Version du guide : 4 septembre 2026.</p>
+    <footer class="page-footer"><span>Guide pratique S27</span><span class="page-number"></span></footer>
+  </article>
+</body>
+</html>

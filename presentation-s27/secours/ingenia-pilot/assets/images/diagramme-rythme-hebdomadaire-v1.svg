@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620" role="img" aria-labelledby="title desc">
+  <title id="title">Rythme hebdomadaire du suivi</title>
+  <desc id="desc">Trois moments : début de semaine, suivi courant et fin de semaine.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#C7A24B"/></marker></defs>
+  <rect width="1500" height="620" fill="#F7FAFD"/>
+  <text x="750" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" fill="#123153">Un rythme simple pendant la semaine</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <line x1="250" y1="310" x2="1250" y2="310" stroke="#BFD5EA" stroke-width="14" stroke-linecap="round"/>
+    <path d="M430 310 H635 M865 310 H1070" stroke="#C7A24B" stroke-width="8" marker-end="url(#arrow)"/>
+    <g transform="translate(95 165)">
+      <circle cx="155" cy="145" r="125" fill="#123153"/>
+      <text x="155" y="112" text-anchor="middle" font-size="28" font-weight="700" fill="#FFFFFF">Début de semaine</text>
+      <text x="155" y="160" text-anchor="middle" font-size="21" fill="#EAF2F8"><tspan x="155">Actions prioritaires</tspan><tspan x="155" dy="31">et blocages</tspan></text>
+    </g>
+    <g transform="translate(595 165)">
+      <circle cx="155" cy="145" r="125" fill="#FFFFFF" stroke="#C7A24B" stroke-width="12"/>
+      <text x="155" y="112" text-anchor="middle" font-size="28" font-weight="700" fill="#123153">Pendant la semaine</text>
+      <text x="155" y="160" text-anchor="middle" font-size="21" fill="#52657A"><tspan x="155">Réaliser, signaler</tspan><tspan x="155" dy="31">et documenter</tspan></text>
+    </g>
+    <g transform="translate(1095 165)">
+      <circle cx="155" cy="145" r="125" fill="#123153"/>
+      <text x="155" y="112" text-anchor="middle" font-size="28" font-weight="700" fill="#FFFFFF">Fin de semaine</text>
+      <text x="155" y="160" text-anchor="middle" font-size="21" fill="#EAF2F8"><tspan x="155">Avancement, paiement</tspan><tspan x="155" dy="31">et dernière mise à jour</tspan></text>
+    </g>
+    <rect x="350" y="500" width="800" height="70" rx="24" fill="#EAF2F8"/>
+    <text x="750" y="543" text-anchor="middle" font-size="23" font-weight="600" fill="#123153">Une saisie régulière prépare des décisions plus claires.</text>
+  </g>
+</svg>

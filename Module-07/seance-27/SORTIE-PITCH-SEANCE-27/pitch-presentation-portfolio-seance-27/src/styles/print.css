@@ -1,0 +1,64 @@
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  .skip-link,
+  .status-badge,
+  .header-actions,
+  .main-nav,
+  .presenter-toolbar,
+  .hero-actions {
+    display: none;
+  }
+
+  .lead,
+  .site-footer {
+    color: #333;
+  }
+
+  .boundary-card,
+  .limit-panel,
+  .readiness-card,
+  .question-card,
+  .link-card,
+  .proof-card,
+  .roles-grid article,
+  .stats-grid article,
+  .need-flow article,
+  .timeline li {
+    border-color: #777;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hero,
+  .content-section {
+    min-height: 0;
+    break-inside: avoid;
+    padding-block: 1.5rem;
+    border-color: #bbb;
+  }
+
+  .hero-visual,
+  .visuals-block {
+    display: none;
+  }
+
+  .principle {
+    border: 2px solid #222;
+    background: transparent;
+    color: #111;
+  }
+
+  a[data-external]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+}
