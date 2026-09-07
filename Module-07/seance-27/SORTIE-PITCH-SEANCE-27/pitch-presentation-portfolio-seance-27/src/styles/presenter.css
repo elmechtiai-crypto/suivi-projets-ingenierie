@@ -1,0 +1,128 @@
+.presenter-toolbar {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-medium);
+  background: rgb(6 20 38 / 94%);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px);
+}
+
+.presenter-status,
+.timer,
+.presenter-navigation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.presenter-status {
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#slide-counter {
+  color: var(--color-cyan-soft);
+  font-weight: 850;
+}
+
+#slide-label {
+  max-width: 26ch;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timer output {
+  min-width: 5.4rem;
+  color: var(--color-gold);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.45rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.presenter-toolbar button {
+  min-height: 2.45rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  background: var(--color-surface-strong);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.presenter-toolbar button:hover:not(:disabled) {
+  border-color: var(--color-cyan);
+}
+
+.presenter-toolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.presenter-navigation {
+  justify-content: flex-end;
+}
+
+.presentation-mode {
+  height: 100svh;
+  overflow: hidden;
+}
+
+.presentation-mode .site-header,
+.presentation-mode .site-footer {
+  display: none;
+}
+
+.presentation-mode main {
+  height: 100svh;
+}
+
+.presentation-mode main > :not([data-slide]) {
+  display: none;
+}
+
+.presentation-mode main > [data-slide] {
+  display: none;
+}
+
+.presentation-mode main > [data-slide].is-active {
+  display: grid;
+  width: 100%;
+  max-width: none;
+  height: calc(100svh - 6.5rem);
+  min-height: 0;
+  align-content: center;
+  margin: 0;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  border: 0;
+  overflow: auto;
+}
+
+.presentation-mode main > [data-slide].is-active::before {
+  display: none;
+}
+
+.presentation-mode .hero.is-active {
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+}
+
+.presentation-mode .content-section .section-heading {
+  margin-bottom: var(--space-4);
+}
+
+.presentation-mode .poster-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}

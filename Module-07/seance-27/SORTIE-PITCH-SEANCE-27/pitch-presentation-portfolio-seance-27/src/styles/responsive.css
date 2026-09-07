@@ -1,0 +1,136 @@
+@media (max-width: 64rem) {
+  .main-nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-visual img {
+    min-height: 20rem;
+    max-height: 28rem;
+  }
+
+  .stats-grid,
+  .poster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proofs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .presenter-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .presenter-status {
+    display: none;
+  }
+
+  .timer,
+  .presenter-navigation {
+    justify-content: center;
+  }
+
+  .presentation-mode main > [data-slide].is-active {
+    height: calc(100svh - 10.5rem);
+  }
+
+  .presentation-mode .hero.is-active {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-mode .hero-visual {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .split-layout,
+  .readiness-layout,
+  .social-preview-card,
+  .roles-grid,
+  .timeline,
+  .links-grid,
+  .proofs-grid,
+  .stats-grid,
+  .proof-poster-grid,
+  .poster-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-5);
+  }
+
+  .hero-visual img {
+    min-height: 14rem;
+  }
+
+  .presentation-plan ol {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section {
+    min-height: auto;
+    padding-block: var(--space-6);
+  }
+
+  .need-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+
+  .presenter-toolbar {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    padding: var(--space-2);
+  }
+
+  .timer,
+  .presenter-navigation {
+    flex-wrap: wrap;
+  }
+
+  .presenter-toolbar button {
+    flex: 1;
+  }
+
+  .presentation-mode main > [data-slide].is-active {
+    height: calc(100svh - 13rem);
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 64rem) and (min-aspect-ratio: 16 / 10) {
+  .presentation-mode h2 {
+    font-size: clamp(2.4rem, 4vw, 4.6rem);
+  }
+
+  .presentation-mode .content-section {
+    font-size: clamp(1rem, 1.25vw, 1.35rem);
+  }
+}

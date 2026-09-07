@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="INGÉNIA PILOT organise le suivi des projets d’ingénierie, aide à repérer les blocages et prépare les actions prioritaires.">
+    <meta name="theme-color" content="#123153">
+    <title>INGÉNIA PILOT — Pilotage des projets d’ingénierie</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./assets/images/icons/icon-192.png">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+    <header id="accueil" class="site-header">
+      <div class="brand">
+        <img
+          src="./assets/images/logo-fictif-suivi-projets-v1.png"
+          alt="Emblème fictif d’INGÉNIA PILOT"
+          width="160"
+          height="160"
+        >
+        <p>INGÉNIA PILOT</p>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a class="alert-nav-link" href="#alertes">
+              <svg class="alert-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3 2.8 20h18.4L12 3Z"></path>
+                <path d="M12 9v5m0 3h.01"></path>
+              </svg>
+              <span>Alertes</span>
+            </a>
+          </li>
+          <li><a href="#priorites">Priorités</a></li>
+          <li><a href="#affiches">Affiches</a></li>
+          <li><a href="#besoin">Pourquoi ce suivi ?</a></li>
+          <li><a href="#missions">Missions suivies</a></li>
+          <li><a href="#informations-suivies">Informations suivies</a></li>
+          <li><a href="#benefices">Bénéfices</a></li>
+          <li><a href="#methode">Méthode</a></li>
+          <li><a href="#checklist">Checklist</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu-principal">
+      <section class="hero" aria-labelledby="titre-principal">
+        <div class="hero-content">
+          <p class="eyebrow">Pilotage des projets d’ingénierie</p>
+          <h1 id="titre-principal">INGÉNIA PILOT</h1>
+          <p class="lead">Une vue claire et partagée des missions en cours</p>
+          <p>
+            Ce guide interne présente une méthode simple pour identifier chaque marché ou dossier,
+            mettre à jour l’avancement des missions, repérer les blocages et préparer les actions
+            prioritaires avec l’équipe.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#alertes">Voir les alertes</a>
+            <a class="hero-secondary-action" href="#missions">Consulter le portefeuille</a>
+          </div>
+          <p class="notice">Démonstration locale — aucune donnée réelle — aucune publication.</p>
+        </div>
+
+        <img
+          src="./assets/images/illustration-suivi-projets-v1.png"
+          alt="Illustration fictive d’un suivi de projets réunissant plans, ouvrage technique et liste de contrôle"
+          width="846"
+          height="464"
+        >
+      </section>
+
+      <section id="besoin" aria-labelledby="titre-besoin">
+        <h2 id="titre-besoin">Pourquoi organiser le suivi ?</h2>
+        <p>
+          Sans outil de suivi partagé, certaines informations restent dispersées, les missions
+          incomplètes sont repérées tardivement et les décisions deviennent plus difficiles à
+          préparer. Un tableau structuré permet de voir en une lecture l’identification de la
+          mission, son avancement, les blocages, les responsabilités et les actions à engager.
+        </p>
+        <p>
+          Le suivi ne remplace pas les dossiers techniques, les contrats, les factures ou les
+          échanges professionnels. Il fournit une vue synthétique pour orienter le travail.
+        </p>
+      </section>
+
+      <section id="missions" aria-labelledby="titre-missions">
+        <h2 id="titre-missions">Portefeuille de missions anonymisé (V3)</h2>
+        <p>
+          Cette démonstration couvre l’ensemble des projets recensés dans la synthèse interne,
+          sous des identifiants fictifs. Aucun nom réel de client, numéro de marché, objet précis
+          ou montant réel n’apparaît sur cette page.
+        </p>
+
+        <div class="missions-summary" aria-label="Synthèse du portefeuille anonymisé">
+          <article><strong id="missions-total">0</strong><span>Missions recensées</span></article>
+          <article><strong id="missions-en-suivi">0</strong><span>En suivi</span></article>
+          <article><strong id="missions-a-demarrer">0</strong><span>À démarrer</span></article>
+          <article><strong id="missions-a-confirmer">0</strong><span>À confirmer ou clôturer</span></article>
+        </div>
+
+        <div class="missions-toolbar" aria-label="Filtres des missions">
+          <label>
+            Rechercher un alias
+            <input id="missions-recherche" type="search" placeholder="Ex. Client8 ou Marché12" autocomplete="off">
+          </label>
+          <label>
+            Statut de suivi
+            <select id="missions-filtre-statut">
+              <option value="">Tous les statuts</option>
+              <option value="En suivi">En suivi</option>
+              <option value="À démarrer">À démarrer</option>
+              <option value="À confirmer">À confirmer</option>
+              <option value="Clôture à confirmer">Clôture à confirmer</option>
+            </select>
+          </label>
+          <label>
+            Année d’activité
+            <select id="missions-filtre-annee">
+              <option value="">Toutes les années</option>
+            </select>
+          </label>
+          <button id="missions-reinitialiser" type="button">Réinitialiser les filtres</button>
+        </div>
+
+        <p id="missions-statut" role="status" aria-live="polite"></p>
+
+        <div class="table-wrapper">
+          <table id="missions-table" aria-busy="true">
+            <caption>Projets anonymisés issus de la synthèse interne</caption>
+            <thead>
+              <tr>
+                <th scope="col">Référence</th>
+                <th scope="col">Client</th>
+                <th scope="col">Type de mission</th>
+                <th scope="col">Échéance</th>
+                <th scope="col">Dernier document</th>
+                <th scope="col">Avancement</th>
+                <th scope="col">Livrable bloquant</th>
+                <th scope="col">État de paiement</th>
+                <th scope="col">Action prioritaire</th>
+                <th scope="col">Responsable</th>
+                <th scope="col">Dernière mise à jour</th>
+              </tr>
+            </thead>
+            <tbody id="missions-corps"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="alertes" class="alerts-section" aria-labelledby="titre-alertes">
+        <div class="alerts-header">
+          <div>
+            <p class="eyebrow">Surveillance du portefeuille</p>
+            <div class="alerts-title-row">
+              <svg class="alerts-heading-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3 2.8 20h18.4L12 3Z"></path>
+                <path d="M12 9v5m0 3h.01"></path>
+              </svg>
+              <h2 id="titre-alertes">Alertes et blocages</h2>
+            </div>
+            <p>
+              Cette vue signale les missions anonymisées dont le statut public est
+              « À confirmer ». Elle présente uniquement la raison générique du blocage,
+              l’action à réaliser et le responsable générique.
+            </p>
+          </div>
+
+          <div class="alerts-count" aria-label="Nombre de missions nécessitant une clarification">
+            <strong id="alertes-total">0</strong>
+            <span>Missions à clarifier</span>
+          </div>
+        </div>
+
+        <p id="alertes-statut" role="status" aria-live="polite">Chargement des alertes…</p>
+        <div id="alertes-liste" class="alerts-list" aria-busy="true"></div>
+
+        <a class="alert-action" href="./index.html?statut=%C3%80%20confirmer#missions">
+          Voir ces missions dans le tableau complet
+        </a>
+      </section>
+
+      <section id="priorites" class="priorities-section" aria-labelledby="titre-priorites">
+        <p class="eyebrow">Décision rapide</p>
+        <h2 id="titre-priorites">Plan d’action du portefeuille</h2>
+        <p>
+          Cette synthèse regroupe les missions anonymisées par statut et indique
+          les actions prioritaires à engager. Les compteurs sont recalculés
+          automatiquement à partir des données publiques.
+        </p>
+
+        <p id="priorites-statut" role="status" aria-live="polite">Chargement des priorités…</p>
+        <div id="priorites-liste" class="priorities-list" aria-busy="true"></div>
+      </section>
+
+      <section id="informations-suivies" aria-labelledby="titre-informations-suivies">
+        <h2 id="titre-informations-suivies">Les 11 informations suivies</h2>
+        <p>Chaque mission est décrite par ces informations, sans donnée réelle affichée ici.</p>
+
+        <p id="colonnes-statut" role="status"></p>
+
+        <div class="colonnes-liste" id="colonnes-liste" aria-busy="true"></div>
+      </section>
+
+      <section id="benefices" aria-labelledby="titre-benefices">
+        <h2 id="titre-benefices">Trois bénéfices pour l’équipe</h2>
+
+        <p id="benefices-statut" role="status"></p>
+
+        <div class="benefit-list" id="benefices-liste" aria-busy="true"></div>
+
+        <figure>
+          <img
+            src="./assets/images/illustration-benefices-suivi-v1.png"
+            alt="Illustration fictive des trois bénéfices : centraliser, repérer et prioriser"
+            width="911"
+            height="432"
+          >
+          <figcaption>Une organisation commune facilite la lecture et la préparation des décisions.</figcaption>
+        </figure>
+      </section>
+
+      <section id="affiches" class="poster-section" aria-labelledby="titre-affiches">
+        <p class="eyebrow">Supports de communication</p>
+        <h2 id="titre-affiches">Les affiches d’INGÉNIA PILOT</h2>
+        <p>
+          Quatre visuels présentent la promesse, les preuves et deux lectures du
+          workflow de publication sous contrôle humain. Ils sont génériques et ne
+          représentent aucun projet réel.
+        </p>
+
+        <div class="poster-grid">
+          <figure class="poster-card">
+            <picture>
+              <source srcset="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.webp" type="image/webp">
+              <img
+                src="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.jpg"
+                alt="Affiche bleu nuit et or d’INGÉNIA PILOT avec le slogan Du dossier dispersé à la décision maîtrisée"
+                width="1080"
+                height="1350"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>La promesse</strong>
+              <span>Du dossier dispersé à la décision maîtrisée.</span>
+              <a href="./assets/images/affiches/affiche-01-lancement-ingenia-pilot.jpg">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+
+          <figure class="poster-card">
+            <picture>
+              <source srcset="./assets/images/affiches/affiche-02-chiffres-cles.webp" type="image/webp">
+              <img
+                src="./assets/images/affiches/affiche-02-chiffres-cles.jpg"
+                alt="Affiche claire d’INGÉNIA PILOT annonçant 41 missions anonymisées et zéro donnée réelle publiée"
+                width="1080"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>Les preuves</strong>
+              <span>41 missions anonymisées, zéro donnée réelle publiée.</span>
+              <a href="./assets/images/affiches/affiche-02-chiffres-cles.jpg">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+
+          <figure class="poster-card">
+            <picture>
+              <img
+                src="./assets/images/affiches/affiche-04-workflow-github-pages-ln-ia.png"
+                alt="Affiche bleu nuit et or présentant les huit étapes du workflow GitHub Pages, du diagnostic au lien HTTPS public"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>Le workflow GitHub Pages</strong>
+              <span>Du diagnostic au lien HTTPS public, avec validation humaine à chaque étape.</span>
+              <a href="./assets/images/affiches/affiche-04-workflow-github-pages-ln-ia.png">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+
+          <figure class="poster-card">
+            <picture>
+              <img
+                src="./assets/images/affiches/affiche-prompt-maitre-module-06-ln-ia-v1.png"
+                alt="Affiche INGÉNIA PILOT présentant le prompt maître LN-IA des séances S21 à S24, du diagnostic à GitHub Pages"
+                width="864"
+                height="1821"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+            <figcaption>
+              <strong>Le prompt maître</strong>
+              <span>De S21 à S24 : comprendre, préparer, versionner et publier avec validation humaine.</span>
+              <a href="./assets/images/affiches/affiche-prompt-maitre-module-06-ln-ia-v1.png">Ouvrir l’affiche</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="poster-disclaimer"><strong>Transparence :</strong> illustrations génériques générées par IA — elles ne représentent pas les projets réels.</p>
+      </section>
+
+      <section id="methode" aria-labelledby="titre-methode">
+        <h2 id="titre-methode">Une méthode en cinq étapes</h2>
+
+        <ol class="method-list">
+          <li>
+            <h3>Comprendre</h3>
+            <p>Identifier le besoin : disposer d’une vue claire des missions, des blocages et de l’état de leur suivi.</p>
+          </li>
+          <li>
+            <h3>Préparer</h3>
+            <p>Définir les champs utiles, les règles de saisie, les personnes autorisées et la fréquence de mise à jour.</p>
+          </li>
+          <li>
+            <h3>Agir</h3>
+            <p>Renseigner ou actualiser les informations disponibles sans inventer une donnée manquante.</p>
+          </li>
+          <li>
+            <h3>Vérifier</h3>
+            <p>Contrôler les échéances, les blocages, l’avancement, l’état de facturation ou de paiement et les actions prioritaires.</p>
+          </li>
+          <li>
+            <h3>Continuer</h3>
+            <p>Mettre à jour régulièrement, archiver les missions terminées et améliorer la méthode lorsque le besoin évolue.</p>
+          </li>
+        </ol>
+
+        <figure>
+          <img
+            src="./assets/images/diagramme-cycle-suivi-v1.svg"
+            alt="Cycle en cinq étapes : comprendre, préparer, agir, vérifier et continuer"
+            width="1600"
+            height="620"
+          >
+          <figcaption>Le suivi est un cycle régulier plutôt qu’une action isolée.</figcaption>
+        </figure>
+
+        <div class="weekly-rhythm">
+          <h3>Rythme de suivi proposé</h3>
+
+          <div>
+            <h4>Point de début de semaine</h4>
+            <p>Examiner en priorité les actions à réaliser et les livrables bloquants afin de planifier la semaine.</p>
+          </div>
+
+          <div>
+            <h4>Point de fin de semaine</h4>
+            <p>Actualiser l’avancement, l’état de facturation ou de paiement et la date de dernière mise à jour.</p>
+          </div>
+
+          <div>
+            <h4>Responsabilité</h4>
+            <p>L’administratif du bureau effectue la saisie régulière. Le gérant ou la personne autorisée ajuste l’avancement lorsque le travail réel diffère de l’indicateur financier.</p>
+          </div>
+
+          <aside aria-label="Point d’attention">
+            <p><strong>Point d’attention :</strong> l’avancement technique et l’état de paiement sont deux informations différentes. Une mission peut être avancée sans être facturée ou payée.</p>
+          </aside>
+
+          <figure>
+            <img
+              src="./assets/images/diagramme-rythme-hebdomadaire-v1.svg"
+              alt="Diagramme du rythme de suivi entre le début et la fin de semaine"
+              width="1500"
+              height="620"
+            >
+            <figcaption>Deux points réguliers permettent de maintenir les informations utiles à jour.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="checklist" aria-labelledby="titre-checklist">
+        <h2 id="titre-checklist">Checklist de préparation du point d’équipe</h2>
+        <p>Vérifiez les informations disponibles sans saisir de données confidentielles dans cette démonstration.</p>
+
+        <button
+          id="checklist-toggle"
+          type="button"
+          aria-controls="checklist-contenu"
+          aria-expanded="true"
+          hidden
+        >Masquer la checklist</button>
+
+        <div id="checklist-contenu">
+          <div class="checklist-group">
+            <h3>Identification du marché ou du dossier</h3>
+            <ul>
+              <li>Le maître d’ouvrage ou client est identifié.</li>
+              <li>Le numéro du marché ou du dossier est renseigné.</li>
+              <li>L’objet du marché ou de la mission est clairement indiqué.</li>
+              <li>Le type de mission est précisé : étude, diagnostic, suivi de chantier ou autre.</li>
+              <li>La date de début, le délai contractuel et l’échéance prévue sont vérifiés.</li>
+              <li>Le montant est renseigné en précisant s’il est HT ou TTC.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-group">
+            <h3>Suivi de la mission</h3>
+            <ul>
+              <li>L’avancement est actualisé.</li>
+              <li>Le livrable bloquant est signalé.</li>
+              <li>L’état de facturation ou de paiement est vérifié.</li>
+              <li>L’action prioritaire est définie.</li>
+              <li>Le responsable de l’action est identifié.</li>
+              <li>La date de dernière mise à jour est renseignée.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-visuals">
+            <figure>
+              <img
+                src="./assets/images/illustration-checklist-marche-v1.png"
+                alt="Illustration fictive d’une checklist entourée des éléments à contrôler dans un dossier"
+                width="512"
+                height="768"
+              >
+              <figcaption>Les contrôles réunissent l’identification et le suivi de la mission.</figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="./assets/images/organigramme-informations-marche-v1.svg"
+                alt="Organigramme séparant les informations d’identification et les informations de suivi d’un marché"
+                width="1500"
+                height="980"
+              >
+              <figcaption>Organisation proposée des informations d’un marché ou dossier.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="securite" aria-labelledby="titre-securite">
+        <h2 id="titre-securite">Sécurité et limites de la démonstration</h2>
+        <p>
+          Cette page présente une méthode et des intitulés de champs. Elle n’affiche aucun vrai nom
+          de maître d’ouvrage, numéro de marché, objet confidentiel, montant, état de paiement,
+          contact, lien privé, identifiant ou secret.
+        </p>
+        <p>
+          La V1 fonctionne localement. Elle n’envoie aucune information, ne contient aucun
+          formulaire de transmission et ne remplace pas le tableau de suivi opérationnel.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>INGÉNIA PILOT — Pilotage des projets d’ingénierie</strong></p>
+      <p>Portefeuille V3 · Démonstration locale · Aucune publication</p>
+    </footer>
+
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>
